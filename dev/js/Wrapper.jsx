@@ -2,7 +2,7 @@ import React from 'react';
 import SearchForm from './SearchForm.jsx';
 import Sorter from './Sorter.jsx';
 import MusicTable from './MusicTable.jsx';
-import MusicTableCell from './MusicTableCell.jsx';
+import MusicTableRow from './MusicTableRow.jsx';
 import Audio from './Audio.jsx';
 
 export default class Wrapper extends React.Component {
@@ -53,14 +53,14 @@ export default class Wrapper extends React.Component {
         });
     }
 
-    renderMusicTableCell() {
+    renderMusicTableRow() {
         let musicData = this.state.data;
 
         return musicData.map( ( music, index ) => {
             let style = index % 2 === 0 ? 'MusicTable__row is-odd' : 'MusicTable__row is-even';
             let signage = music.trackId === this.state.trackId ? '■' : '▶︎';
             return (
-                <MusicTableCell key={ music.trackId } music = { music } style = {style} signage = { signage } onPlayButton = { this.playMusic.bind(this) } />
+                <MusicTableRow key={ music.trackId } music = { music } style = {style} signage = { signage } onPlayButton = { this.playMusic.bind(this) } />
             )
         });
     }
@@ -74,7 +74,7 @@ export default class Wrapper extends React.Component {
                     <Sorter sortItem = { this.state.sortItem } onSortBy = { this.sortBy.bind(this) } />
                 </header>
                 <MusicTable data = { this.state.data } >
-                    { this.renderMusicTableCell() }
+                    { this.renderMusicTableRow() }
                 </MusicTable>
                 <Audio previewUrl = { this.state.previewUrl } />
             </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class MusicTableCell extends React.Component {
+export default class MusicTableRow extends React.Component {
     
     handlePlayButton(e) {
         e.preventDefault();
