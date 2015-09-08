@@ -9,8 +9,21 @@ div,header,footer,article,section,figure,h1,h2,h3,h4,p,ul,ol,li,input,area,small
     padding: 0;
 }
 
+a {
+	outline : none;
+}
+
 img {
     vertical-align: top;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea,
+button {
+	border : none;
 }
 
 ul,ol {
