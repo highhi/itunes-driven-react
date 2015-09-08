@@ -13,10 +13,10 @@ export default class SearchForm extends React.Component {
     }
     render() {
         return (
-            <form onSubmit={ this.handleKeywordSubmit.bind(this) }>
-                <div className="Search">
-                    <input className="Search__area" type="text" placeholder="Search" ref="keyword" />
-                    <button className="Search__button" type="submit">Search</button>
+            <form classNmae="SearchForm" onSubmit={ this.handleKeywordSubmit.bind(this) }>
+                <div className="SearchForm__inner">
+                    <input className="SearchForm__text" type="text" placeholder="type text" ref="keyword" />
+                    <button className="SearchForm__button" type="submit">Search</button>
                 </div>
             </form>
         );
