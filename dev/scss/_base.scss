@@ -63,21 +63,21 @@ h1 {
     color: #fff;
 }
 
-.TrackTable {
+.MusicTable {
     display: table;
     box-sizing: border-box;
     width: 100%;
     border-collapse:collapse;
 }
 
-.TrackTable__row {
+.MusicTable__row {
     display: table-row;
     &.is-odd {
         background: #F8F8F8;
     }
 }
 
-.TrackTable__cell {
+.MusicTable__cell {
     display: table-cell;
     box-sizing: border-box;
     padding: 10px;
@@ -115,7 +115,7 @@ h1 {
     }
 }
 
-.TrackTable__button {
+.MusicTable__button {
     border-radius: 2px;
     border: 1px solid #ccc;
     background: linear-gradient(to bottom, #f2f2f2 0%,#c9c9c9 100%);
@@ -124,17 +124,17 @@ h1 {
 
 }
 
-.Sort {
+.Sorter {
     float: right;
     padding-top: 12px;
 }
 
-.Sort__label {
+.Sorter__label {
     vertical-align: middle;
     margin-right: 5px;
 }
 
-.Sort__select {
+.Sorter__select {
     background : #fff;
     font-family: monospace;
     height: 29px;
