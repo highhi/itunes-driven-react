@@ -7,7 +7,7 @@ export default class MusicTableRow extends React.Component {
 
         this.props.onPlayButton({
             previewUrl : this.props.music.previewUrl,
-            trackId : this.props.music.trackId
+            trackId    : this.props.music.trackId
         });
     }
     
