@@ -9,6 +9,7 @@ import Audio         from './Audio.jsx';
 import util          from './util';
 import { ORDERBY_ASC, ORDERBY_DESC } from './variables';
 
+
 export default class Wrapper extends React.Component {
     constructor(props) {
         super(props);
@@ -25,17 +26,12 @@ export default class Wrapper extends React.Component {
         let kw  = encodeURIComponent( keyword );
         let url = 'https://itunes.apple.com/search?term='+ kw +'&media=music&country=jp&lang=ja_jp&callback=JSON_CALLBACK';
 
-        $.ajax({
-            type     : 'GET',
-            url      : url,
-            dataType : 'jsonp',
-            cache    : false
-        }).done( data => {
-            let json     = typeof data.results === 'string' ? JSON.parse( data.results ) : data.results;
+        util.fetch( url ).then( res => {
+            let json = typeof res.results === 'string' ? JSON.parse( res.results ) : res.results;
             let sortData = util.sortBydata( json, this.currentOrder, this.state.sortItem );
             this.setState({ data : sortData });
-        }).fail( status, err => {
-            console.error( status, err.toString() );
+        }, err => {
+            console.log( err );
         });
     }
 
