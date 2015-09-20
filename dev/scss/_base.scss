@@ -135,6 +135,17 @@ h1 {
     margin-right: 5px;
 }
 
+.Sorter__oder {
+    margin-top: 8px;
+}
+
+.Sorter__oder__item {
+    cursor: pointer;
+    &:first-child {
+        margin-right: 10px;
+    }
+}
+
 .Sorter__select {
     background : #fff;
     border : 1px solid #ccc;
