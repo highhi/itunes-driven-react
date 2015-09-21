@@ -1,3 +1,5 @@
+'use strict';
+
 import React from 'react';
 
 export default class MusicTable extends React.Component {
